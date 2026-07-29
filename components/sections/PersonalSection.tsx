@@ -1,56 +1,6 @@
-import { SkillGroupCard } from "@/components/sections/SkillGroupCard";
-
-const skillGroups = [
-    {
-        title: "언어",
-        skills: [
-            { name: "TypeScript", icon: "/images/skills/typescript.svg" },
-            { name: "JavaScript", icon: "/images/skills/javascript.svg" },
-            { name: "HTML5", icon: "/images/skills/html5.svg" },
-            { name: "CSS3", icon: "/images/skills/css3.svg" },
-            { name: "C", icon: "/images/skills/c.svg" },
-            { name: "Java", icon: "/images/skills/java.svg" },
-        ],
-    },
-    {
-        title: "프론트엔드",
-        skills: [
-            { name: "Next.js", icon: "/images/skills/nextjs.svg" },
-            { name: "React", icon: "/images/skills/react.svg" },
-        ],
-    },
-    {
-        title: "백엔드",
-        skills: [
-            { name: "SpringBoot", icon: "/images/skills/springboot.svg" },
-        ],
-    },
-    {
-        title: "데이터베이스",
-        skills: [
-            { name: "MariaDB", icon: "/images/skills/maria.svg" },
-            { name: "Supabase", icon: "/images/skills/supabase.svg" },
-            { name: "MySQL", icon: "/images/skills/mysql.svg" },
-            { name: "DynamoDB", icon: "/images/skills/dynamo.svg" },
-        ],
-    },
-    {
-        title: "기타",
-        skills: [
-            { name: "Git", icon: "/images/skills/git.svg" },
-            { name: "Notion", icon: "/images/skills/notion.svg" },
-            { name: "Figma", icon: "/images/skills/figma.svg" },
-            { name: "Jira", icon: "/images/skills/jira.svg" },
-            { name: "Confluence", icon: "/images/skills/confluence.svg" },
-            { name: "VS Code", icon: "/images/skills/vscode.svg" },
-        ],
-    },
-];
+import Image from "next/image";
 
 export default function PersonalSection() {
-
-    const [languageGroup, frontendGroup, backendGroup, databaseGroup, etcGroup] = skillGroups;
-
     return (
         <section
             id="Personal"
@@ -58,20 +8,72 @@ export default function PersonalSection() {
         >
 
             <h2 className="text-base font-bold leading-6 tracking-widest text-blue-500 dark:text-blue-400">
-                기술 스택
+                경력 사항
             </h2>
 
-            <div className="mt-6 flex flex-col gap-6">
-                <SkillGroupCard group={languageGroup} />
-
-                <div className="grid gap-6 md:grid-cols-2">
-                    <SkillGroupCard group={frontendGroup} />
-                    <SkillGroupCard group={backendGroup} />
+            <div className="flex items-start gap-4 self-stretch border-l-2 border-blue-400 px-2.5 mt-6">
+                <div className="flex w-32 self-stretch flex-col items-start pt-0.5 pb-20">
+                    <p className="text-xs font-extralight leading-5 text-stone-500 dark:text-stone-400">
+                        2024.07 - 2025.09
+                    </p>
                 </div>
 
-                <div className="grid gap-6 md:grid-cols-2">
-                    <SkillGroupCard group={databaseGroup} />
-                    <SkillGroupCard group={etcGroup} />
+                <div className="flex flex-col items-start gap-2 self-stretch">
+                    <div>
+                        <span className="text-base font-semibold leading-6 text-zinc-900 dark:text-zinc-100">
+                            이루온
+                        </span>
+                        <span className="text-base font-light leading-6 text-neutral-500 dark:text-neutral-400">
+                            {" | 소프트웨어 개발자"}
+                        </span>
+                    </div>
+
+
+                    <div className="flex items-start gap-[5px]">
+                        <Image
+                            src="/images/skills/javascript.svg"
+                            alt="JavaScript"
+                            width={20}
+                            height={20}
+                            className="size-5"
+                        />
+                        <Image
+                            src="/images/skills/c.svg"
+                            alt="C"
+                            width={20}
+                            height={20}
+                            className="size-5"
+                        />
+                        <Image
+                            src="/images/skills/linux.svg"
+                            alt="linux"
+                            width={20}
+                            height={20}
+                            className="size-5"
+                        />
+                        <Image
+                            src="/images/skills/gitlab.svg"
+                            alt="gitlab"
+                            width={20}
+                            height={20}
+                            className="size-5"
+                        />
+                        <Image
+                            src="/images/skills/vscode.svg"
+                            alt="vscode"
+                            width={20}
+                            height={20}
+                            className="size-5"
+                        />
+                    </div>
+
+                    <div className="flex flex-col items-start gap-1 self-stretch">
+                        <p className="text-sm font-light leading-6 text-gray-700 dark:text-gray-300">
+                            SIP 기본 호 시험 자동화 APP 신규 론칭
+                            <br />
+                            KT, U+ 고객사 IBCF 장비 MMLD 프로세스 이슈 및 운용 개선 C 담당자
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
