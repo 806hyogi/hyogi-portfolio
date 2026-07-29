@@ -4,15 +4,15 @@ export default function PersonalSection() {
     return (
         <section
             id="Personal"
-            className="scroll-mt-16 border-b border-slate-300 px-8 py-8 dark:border-slate-700"
+            className="scroll-mt-16 border-b border-slate-300 px-4 py-8 dark:border-slate-700"
         >
 
             <h2 className="text-base font-bold leading-6 tracking-widest text-blue-500 dark:text-blue-400">
                 경력 사항
             </h2>
 
-            <div className="flex items-start gap-4 self-stretch border-l-2 border-blue-400 px-2.5 mt-6">
-                <div className="flex w-32 self-stretch flex-col items-start pt-0.5 pb-20">
+            <div className="mt-6 flex flex-col items-start gap-3 border-l-2 border-blue-400 px-2.5 sm:flex-row sm:gap-4">
+                <div className="flex w-full flex-col items-start pt-0.5 sm:w-32 sm:self-stretch sm:pb-20">
                     <p className="text-xs font-extralight leading-5 text-stone-500 dark:text-stone-400">
                         2024.07 - 2025.09
                     </p>

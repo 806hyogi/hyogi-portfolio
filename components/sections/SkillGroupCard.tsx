@@ -16,7 +16,7 @@ type SkillGroupCardProps = {
 
 export function SkillGroupCard({ group }: SkillGroupCardProps) {
     return (
-        <section className="rounded-2xl bg-stone-50 p-6 dark:bg-slate-800">
+        <section className="rounded-2xl bg-stone-50 p-4 dark:bg-slate-800">
             <h3 className="text-xs font-bold leading-4 tracking-wide text-zinc-900 dark:text-zinc-100">
                 {group.title}
             </h3>

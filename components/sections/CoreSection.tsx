@@ -38,7 +38,7 @@ export default function CoreSection() {
     return (
         <section
             id="Core"
-            className="scroll-mt-16 border-b border-slate-300 px-8 py-8 dark:border-slate-700"
+            className="scroll-mt-16 border-b border-slate-300 px-4 py-8 dark:border-slate-700"
         >
             <h2 className="text-base font-bold leading-6 tracking-widest text-blue-500 dark:text-blue-400">
                 핵심 역량
