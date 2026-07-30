@@ -18,14 +18,6 @@ const educationItems = [
         ],
     },
     {
-        title: "컴퓨터공학 학사",
-        organization: "선문대학교",
-        description: "컴퓨터공학 전공",
-        period: "2020.03 - 2024.02",
-        active: false,
-        awards: [],
-    },
-    {
         title: "대학생 SW 몰입형 부트캠프",
         organization: "비트교육센터",
         description: "대학생 개발자 대상 웹 풀스택 교육 과정",
