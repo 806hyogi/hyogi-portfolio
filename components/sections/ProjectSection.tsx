@@ -142,7 +142,7 @@ export default function ProjectSection() {
                                     {project.title}
                                 </h3>
 
-                                <p className="max-w-full text-left text-xs font-medium leading-4 text-stone-300 dark:text-stone-500 sm:shrink-0 sm:text-right">
+                                <p className="max-w-full text-left text-xs font-extralight leading-5 text-stone-500 dark:text-stone-400 sm:shrink-0 sm:text-right">
                                     {project.organization} · {project.period}
                                 </p>
                             </div>

@@ -20,16 +20,41 @@ Hyogi Portfolio는 Next.js App Router 기반의 개발자 포트폴리오 사이
 - `npm run start`: 프로덕션 서버 실행
 - `npm run lint`: ESLint 검사 실행
 
-## 디렉터리 구조
+## 현재 디렉터리 구조
 
 ```text
-app/                 Next.js App Router 라우트, 레이아웃, 페이지
-components/          재사용 가능한 React 컴포넌트
-components/ui/       shadcn/ui 기반 공통 UI 컴포넌트
-lib/                 앱 전역에서 공유하는 유틸리티, 설정, 타입
-lib/backend/         백엔드 API, DB, 서버 응답과 관련된 타입과 헬퍼
-lib/config/          사이트 메타데이터, 전역 설정값
-public/              이미지, 아이콘 등 정적 파일
+app/                         Next.js App Router 라우트, 레이아웃, 전역 스타일
+app/(auth)/                  인증 관련 라우트 그룹
+app/(dev)/                   개발 확인용 라우트 그룹
+app/(protected)/             보호된 페이지 라우트 그룹
+app/(public)/                공개 페이지 라우트 그룹
+app/fonts.ts                 폰트 설정
+app/globals.css              전역 스타일
+app/layout.tsx               루트 레이아웃
+app/page.tsx                 메인 페이지
+
+components/                  재사용 가능한 React 컴포넌트
+components/layout/           Header, Footer 같은 레이아웃 컴포넌트
+components/sections/         포트폴리오 메인 섹션 컴포넌트
+components/theme/            테마 provider, toggle 컴포넌트
+components/ui/               shadcn/ui 기반 공통 UI 컴포넌트
+
+lib/                         앱 전역에서 공유하는 유틸리티, 설정, 타입
+lib/backend/                 백엔드 API, DB, 서버 응답과 관련된 타입과 헬퍼
+lib/config/                  사이트 메타데이터, 전역 설정값
+lib/utils.ts                 shadcn/ui와 공통 UI 유틸리티
+
+public/                      이미지, 아이콘, 폰트 등 정적 파일
+public/fonts/                로컬 폰트 파일
+public/icon/                 아이콘 파일
+public/images/               프로필, 프로젝트, 기술 스택 이미지
+
+components.json              shadcn/ui 설정
+eslint.config.mjs            ESLint 설정
+next.config.ts               Next.js 설정
+package.json                 패키지 및 스크립트 설정
+postcss.config.mjs           PostCSS 설정
+tsconfig.json                TypeScript 설정
 ```
 
 ## lib 정리 규칙
@@ -49,6 +74,10 @@ public/              이미지, 아이콘 등 정적 파일
 - 재사용 가능한 UI는 `components/`에 둡니다.
 - shadcn/ui 컴포넌트는 `components/ui/`에 둡니다.
 - 불필요하게 큰 추상화나 폴더를 미리 만들지 않습니다.
+- 사용자가 명시적으로 적용을 요청하기 전에는 코드를 직접 수정하지 않습니다.
+- 코드 변경이 필요해 보이면 먼저 변경 위치, 변경 이유, 예상 결과를 설명하고 사용자 확인을 기다립니다.
+- 사용자가 제공한 이력, 프로젝트, 기간, 기관명, 수상명 같은 데이터는 임의로 변경하지 않습니다.
+- 데이터에 오타, 날짜 오류, 깨진 문자처럼 의심되는 부분이 있으면 직접 고치지 말고 사용자에게 알려 확인을 요청합니다.
 
 ## 스타일링 규칙
 
