@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
@@ -119,7 +122,22 @@ const projects = [
     },
 ];
 
+const projectValues = projects.map((project) => project.title);
+
 export default function ProjectSection() {
+    const [openProjects, setOpenProjects] = useState<string[]>([]); // 프로젝트 아코디언 상태
+
+    /* 프로젝트 열리는 이벤트 */
+    useEffect(() => {
+        const handleOpenAllProjects = () => {
+            setOpenProjects(projectValues);
+        };
+
+        window.addEventListener("portfolio:open-all-projects", handleOpenAllProjects);
+
+        return () => { window.removeEventListener("portfolio:open-all-projects", handleOpenAllProjects) };
+    }, []);
+
     return (
         <section
             id="Project"
@@ -129,7 +147,11 @@ export default function ProjectSection() {
                 주요 프로젝트
             </h2>
 
-            <Accordion type="single" collapsible className="mt-6 flex flex-col gap-6">
+            <Accordion type="multiple"
+                value={openProjects}
+                onValueChange={setOpenProjects}
+                className="mt-6 flex flex-col gap-6"
+            >
                 {projects.map((project) => (
                     <AccordionItem
                         key={project.title}
@@ -180,6 +202,7 @@ export default function ProjectSection() {
                                         alt={`${project.title} 화면 ${index + 1}`}
                                         width={706}
                                         height={351}
+                                        loading="eager"
                                         className="h-auto w-full rounded-md object-contain"
                                     />
                                 ))}
