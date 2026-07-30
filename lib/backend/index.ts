@@ -1,3 +1,5 @@
+export { supabase } from "./supabase";
+
 export type {
   ApiError,
   ApiResponse,
