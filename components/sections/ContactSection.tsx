@@ -26,17 +26,28 @@ export default function ContactSection() {
     const handleDownloadPdf = async () => {
         window.dispatchEvent(new Event("portfolio:open-all-projects"));
 
+        const closeProjects = () => {
+            window.dispatchEvent(new Event("portfolio:close-all-projects"));
+            window.removeEventListener("afterprint", closeProjects); // 인쇄가 끝났을때 닫기
+            window.removeEventListener("focus", closeProjects); // 인쇄창을 닫고 페이지로 돌아왔을때 닫기
+        };
+
+        window.addEventListener("afterprint", closeProjects);
+        window.addEventListener("focus", closeProjects);
+
         await wait(500);
         await waitForImages();
         await wait(300);
 
         window.print();
+
+        setTimeout(closeProjects, 300);
     };
 
     return (
         <section
             id="Contact"
-            className="scroll-mt-16 border-b border-slate-300 px-4 py-10 dark:border-slate-700"
+            className="scroll-mt-16border-slate-300 px-4 py-10 mb-16 dark:border-slate-700"
         >
             <div className="flex flex-col items-center gap-4 text-center">
                 <p className="text-base font-normal leading-6 text-zinc-900 dark:text-zinc-100">

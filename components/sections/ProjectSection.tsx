@@ -133,9 +133,17 @@ export default function ProjectSection() {
             setOpenProjects(projectValues);
         };
 
-        window.addEventListener("portfolio:open-all-projects", handleOpenAllProjects);
+        const handleCloseAllProjects = () => {
+            setOpenProjects([]);
+        }
 
-        return () => { window.removeEventListener("portfolio:open-all-projects", handleOpenAllProjects) };
+        window.addEventListener("portfolio:open-all-projects", handleOpenAllProjects);
+        window.addEventListener("portfolio:close-all-projects", handleCloseAllProjects);
+
+        return () => {
+            window.removeEventListener("portfolio:open-all-projects", handleOpenAllProjects);
+            window.removeEventListener("portfolio:close-all-projects", handleCloseAllProjects);
+        };
     }, []);
 
     return (
