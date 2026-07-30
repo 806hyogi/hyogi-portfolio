@@ -24,6 +24,11 @@ export default function ContactSection() {
 
     /* 이력서 다운로드 */
     const handleDownloadPdf = async () => {
+        if (window.matchMedia("(max-width: 767px)").matches) {
+            window.alert("이력서 다운로드는 PC에서만 사용할 수 있습니다.");
+            return;
+        }
+
         window.dispatchEvent(new Event("portfolio:open-all-projects"));
 
         const closeProjects = () => {
@@ -47,7 +52,7 @@ export default function ContactSection() {
     return (
         <section
             id="Contact"
-            className="scroll-mt-16border-slate-300 px-4 py-10 mb-16 dark:border-slate-700"
+            className="mb-16 scroll-mt-16 px-4 py-10"
         >
             <div className="flex flex-col items-center gap-4 text-center">
                 <p className="text-base font-normal leading-6 text-zinc-900 dark:text-zinc-100">
@@ -64,7 +69,7 @@ export default function ContactSection() {
             <div className="flex flex-col justify-center gap-4 pt-7 sm:flex-row">
                 <a
                     href="mailto:rhkdgur120@naver.com"
-                    className="inline-flex items-center justify-center gap-1 rounded-xs bg-blue-400 dark:bg-blue-900 px-6 py-4 text-base font-normal leading-6 text-white hover:bg-blue-500">
+                    className="inline-flex items-center justify-center gap-1 rounded-md bg-blue-500 px-6 py-4 text-base font-medium leading-6 text-white transition-colors hover:bg-blue-600 dark:bg-blue-700 dark:hover:bg-blue-600">
                     <Mail aria-hidden="true" className="size-5" />
                     이메일 보내기
                 </a>
@@ -72,7 +77,7 @@ export default function ContactSection() {
                     type="button"
                     data-pdf-ignore="true"
                     onClick={handleDownloadPdf}
-                    className="cursor-pointer inline-flex items-center justify-center gap-1 rounded-xs px-6 py-4 text-base font-normal leading-6 text-zinc-900 outline outline-1 outline-offset-[-1px] outline-slate-300 dark:text-zinc-100 dark:outline-slate-700"
+                    className="inline-flex cursor-pointer items-center justify-center gap-1 rounded-md border border-slate-300 px-6 py-4 text-base font-medium leading-6 text-zinc-900 transition-colors hover:bg-slate-50 dark:border-slate-700 dark:text-zinc-100 dark:hover:bg-slate-800"
                 >
                     <Download aria-hidden="true" className="size-5" />
                     이력서 다운로드

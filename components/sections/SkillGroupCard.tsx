@@ -16,16 +16,16 @@ type SkillGroupCardProps = {
 
 export function SkillGroupCard({ group }: SkillGroupCardProps) {
     return (
-        <section className="rounded-2xl bg-stone-50 p-4 dark:bg-slate-800">
-            <h3 className="text-xs font-bold leading-4 tracking-wide text-zinc-900 dark:text-zinc-100">
+        <section className="rounded-lg border border-slate-200 bg-white p-4 dark:border-slate-700 dark:bg-slate-900">
+            <h3 className="text-sm font-semibold leading-5 text-zinc-900 dark:text-zinc-100">
                 {group.title}
             </h3>
 
-            <div className="mt-4 flex flex-wrap gap-[5px]">
+            <div className="mt-4 flex flex-wrap gap-2">
                 {group.skills.map((skill) => (
                     <span
                         key={skill.name}
-                        className="inline-flex h-7 items-center gap-1 rounded-[5px] bg-white px-3 py-1 text-xs font-bold leading-4 text-neutral-500 outline outline-1 outline-gray-200 dark:bg-slate-900 dark:text-neutral-300 dark:outline-slate-700"
+                        className="inline-flex h-8 items-center gap-1 rounded-md border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-medium leading-4 text-neutral-600 dark:border-slate-700 dark:bg-slate-800 dark:text-neutral-300"
                     >
                         <Image
                             src={skill.icon}

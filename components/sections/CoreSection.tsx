@@ -1,5 +1,8 @@
 import Image from "next/image";
 
+import { BulletList } from "@/components/sections/BulletList";
+import { SectionHeading } from "@/components/sections/SectionHeading";
+
 const coreItems = [
     {
         title: "협업을 통한 문제 해결",
@@ -38,19 +41,19 @@ export default function CoreSection() {
     return (
         <section
             id="Core"
-            className="scroll-mt-16 border-b border-slate-300 px-4 py-8 dark:border-slate-700"
+            className="scroll-mt-16 border-b border-slate-300 px-4 py-10 dark:border-slate-700"
         >
-            <h2 className="text-base font-bold leading-6 tracking-widest text-blue-500 dark:text-blue-400">
+            <SectionHeading>
                 핵심 역량
-            </h2>
+            </SectionHeading>
 
-            <div className="mt-6 grid gap-3 md:grid-cols-3">
+            <div className="mt-6 grid gap-4 md:grid-cols-3">
                 {coreItems.map((item) => (
                     <article
                         key={item.title}
-                        className="overflow-hidden rounded-lg bg-white dark:bg-slate-900"
+                        className="overflow-hidden rounded-lg border border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900"
                     >
-                        <div className="relative h-56 bg-stone-50 dark:bg-slate-800">
+                        <div className="relative aspect-[4/3] bg-slate-50 dark:bg-slate-800">
                             <Image
                                 src={item.image}
                                 alt={`${item.title} 이미지`}
@@ -60,15 +63,13 @@ export default function CoreSection() {
                             />
                         </div>
 
-                        <div className="px-2.5 py-4">
+                        <div className="p-4">
                             <h3 className="text-base font-semibold leading-6 text-zinc-900 dark:text-zinc-100">
                                 {item.title}
                             </h3>
 
-                            <div className="mt-2 space-y-1 text-xs font-light leading-5 text-neutral-500 dark:text-neutral-300">
-                                {item.description.map((line) => (
-                                    <p key={line}>{line}</p>
-                                ))}
+                            <div className="mt-3">
+                                <BulletList items={item.description} />
                             </div>
                         </div>
                     </article>

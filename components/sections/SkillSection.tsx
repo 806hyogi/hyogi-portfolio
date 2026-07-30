@@ -1,4 +1,5 @@
 import { SkillGroupCard } from "@/components/sections/SkillGroupCard";
+import { SectionHeading } from "@/components/sections/SectionHeading";
 
 const skillGroups = [
     {
@@ -54,12 +55,12 @@ export default function SkillSection() {
     return (
         <section
             id="Skill"
-            className="scroll-mt-16 border-b border-slate-300 px-4 py-8 dark:border-slate-700"
+            className="scroll-mt-16 border-b border-slate-300 px-4 py-10 dark:border-slate-700"
         >
 
-            <h2 className="text-base font-bold leading-6 tracking-widest text-blue-500 dark:text-blue-400">
+            <SectionHeading>
                 기술 스택
-            </h2>
+            </SectionHeading>
 
             <div className="mt-6 flex flex-col gap-6">
                 <SkillGroupCard group={languageGroup} />

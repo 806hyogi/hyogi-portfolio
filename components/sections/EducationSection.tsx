@@ -1,10 +1,12 @@
 import { Award } from "lucide-react";
 
+import { SectionHeading } from "@/components/sections/SectionHeading";
+
 const educationItems = [
     {
         title: "TECH UP 부트캠프",
         organization: "KT 클라우드",
-        description: "1기 프론트엔드 과정",
+        description: "프론트엔드 실무 역량 강화를 위한 프로젝트 중심 교육 과정",
         period: "2025.09 - 2026.04",
         active: true,
         awards: [
@@ -24,9 +26,9 @@ const educationItems = [
         awards: [],
     },
     {
-        title: "웹 풀스택 SW 몰입형 부트캠프",
+        title: "대학생 SW 몰입형 부트캠프",
         organization: "비트교육센터",
-        description: "웹 풀스택 (예비자+정규) 과정",
+        description: "대학생 개발자 대상 웹 풀스택 교육 과정",
         period: "2023.06 - 2023.12",
         active: false,
         awards: [
@@ -48,27 +50,29 @@ export default function EducationSection() {
     return (
         <section
             id="Education"
-            className="scroll-mt-16 border-b border-slate-300 px-4 py-8 dark:border-slate-700"
+            className="scroll-mt-16 border-b border-slate-300 px-4 py-10 dark:border-slate-700"
         >
-            <h2 className="text-base font-bold leading-6 tracking-widest text-blue-500 dark:text-blue-400">
+            <SectionHeading>
                 교육 및 수상
-            </h2>
+            </SectionHeading>
 
-            <div className="mt-6 flex flex-col gap-3.5">
+            <div className="mt-6 flex flex-col gap-4">
                 {educationItems.map((item) => (
-                    <article key={item.title} className="flex flex-col gap-2.5">
+                    <article key={item.title} className="rounded-lg border border-slate-200 bg-white p-4 dark:border-slate-700 dark:bg-slate-900">
                         <div
-                            className={`flex flex-col gap-1 border-l-2 pl-2.5 sm:flex-row sm:justify-between sm:gap-4 ${item.active
-                                ? "border-blue-400"
-                                : "border-neutral-200 dark:border-slate-700"
-                                }`}
+                            className="flex flex-col gap-2 sm:flex-row sm:justify-between sm:gap-4"
                         >
                             <div className="min-w-0">
-                                <h3 className="text-base leading-6 text-zinc-900 dark:text-zinc-100">
-                                    <span className={item.active ? "font-normal" : "font-semibold"}>
+                                <h3 className="flex flex-wrap items-center gap-2 text-base leading-6 text-zinc-900 dark:text-zinc-100">
+                                    <span className="font-semibold">
                                         {item.title}
                                     </span>
                                     <span className="font-light"> | {item.organization}</span>
+                                    {item.active ? (
+                                        <span className="rounded-full bg-blue-50 px-2 py-0.5 text-xs font-medium leading-5 text-blue-600 dark:bg-blue-950 dark:text-blue-300">
+                                            최신
+                                        </span>
+                                    ) : null}
                                 </h3>
                                 <p className="text-sm font-extralight leading-5 text-gray-700 dark:text-neutral-300">
                                     {item.description}
@@ -81,7 +85,7 @@ export default function EducationSection() {
                         </div>
 
                         {item.awards.length > 0 && (
-                            <div className="flex flex-col gap-1">
+                            <div className="mt-3 flex flex-col gap-2 border-t border-slate-100 pt-3 dark:border-slate-800">
                                 {item.awards.map((award) => (
                                     <div
                                         key={award.title}

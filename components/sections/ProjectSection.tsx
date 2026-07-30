@@ -3,6 +3,8 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { BulletList } from "@/components/sections/BulletList";
+import { SectionHeading } from "@/components/sections/SectionHeading";
 
 const projects = [
     {
@@ -144,22 +146,22 @@ export default function ProjectSection() {
     return (
         <section
             id="Project"
-            className="scroll-mt-16 border-b border-slate-300 px-4 py-8 dark:border-slate-700"
+            className="scroll-mt-16 border-b border-slate-300 px-4 py-10 dark:border-slate-700"
         >
-            <h2 className="text-base font-bold leading-6 tracking-widest text-blue-500 dark:text-blue-400">
+            <SectionHeading>
                 주요 프로젝트
-            </h2>
+            </SectionHeading>
 
             <Accordion type="multiple"
                 value={openProjects}
                 onValueChange={setOpenProjects}
-                className="mt-6 flex flex-col gap-6"
+                className="mt-6 flex flex-col gap-4"
             >
                 {projects.map((project) => (
                     <AccordionItem
                         key={project.title}
                         value={project.title}
-                        className="rounded-[10px] border border-border px-3 pb-4 dark:border-slate-700"
+                        className="rounded-lg border border-slate-200 bg-white px-4 pb-4 dark:border-slate-700 dark:bg-slate-900"
                     >
                         <AccordionTrigger className="min-h-12 items-center py-2.5 hover:no-underline cursor-pointer">
                             <div className="flex min-w-0 flex-1 flex-col items-start gap-1 pr-2 sm:flex-row sm:items-center sm:gap-4 sm:pr-3">
@@ -173,22 +175,18 @@ export default function ProjectSection() {
                             </div>
                         </AccordionTrigger>
 
-                        <p className="min-h-10 text-base font-normal leading-5 text-neutral-600 dark:text-neutral-300">
+                        <p className="min-h-10 text-sm font-normal leading-6 text-neutral-600 dark:text-neutral-300">
                             {project.summary}
                         </p>
 
                         <AccordionContent className="pt-2.5">
-                            <ul className="space-y-1 text-base font-light leading-5 text-neutral-600 dark:text-neutral-300">
-                                {project.points.map((point) => (
-                                    <li key={point}>· {point}</li>
-                                ))}
-                            </ul>
+                            <BulletList items={project.points} />
 
-                            <div className="mt-4 flex flex-wrap gap-[5px]">
+                            <div className="mt-4 flex flex-wrap gap-2">
                                 {project.stacks.map((stack) => (
                                     <span
                                         key={stack}
-                                        className="rounded-[5px] ml-0.5 px-2.5 py-0.5 text-xs font-normal leading-5 text-neutral-500 outline outline-1 outline-stone-300 dark:text-neutral-300 dark:outline-slate-600"
+                                        className="rounded-md border border-slate-200 bg-slate-50 px-2.5 py-0.5 text-xs font-medium leading-5 text-neutral-600 dark:border-slate-700 dark:bg-slate-800 dark:text-neutral-300"
                                     >
                                         {stack}
                                     </span>

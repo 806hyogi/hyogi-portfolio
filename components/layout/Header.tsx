@@ -7,11 +7,12 @@ import { useState } from "react";
 
 import { ThemeToggle } from "@/components/theme/theme-toggle";
 import { Button } from "@/components/ui/button";
+import { ResumeDownloadButton } from "@/components/layout/ResumeDownloadButton";
 
 const navItems = [
     { label: "소개", href: "#Intro" },
     { label: "핵심 역량", href: "#Core" },
-    { label: "성향", href: "#Personal" },
+    { label: "경력 사항", href: "#Personal" },
     { label: "기술 스택", href: "#Skill" },
     { label: "프로젝트", href: "#Project" },
     { label: "교육 및 수상", href: "#Education" },
@@ -41,6 +42,8 @@ export function Header() {
                 </Link>
 
                 <div className="hidden items-center gap-2 sm:flex">
+                    <ResumeDownloadButton compact />
+
                     <ThemeToggle />
 
                     <Button asChild variant="ghost" size="icon">
@@ -101,6 +104,8 @@ export function Header() {
                         </nav>
 
                         <div className="flex items-center justify-end gap-2 border-t border-border pt-3">
+                            <ResumeDownloadButton compact />
+
                             <ThemeToggle />
 
                             <Button asChild variant="ghost" size="icon">

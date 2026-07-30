@@ -11,7 +11,7 @@ export function Footer() {
                 </p>
 
                 <p className="text-base font-extralight leading-6 text-gray-700 dark:text-neutral-300">
-                    © 2026 Choi Kwanghyuk. All rights reserved.
+                    © 2026 Choi Kwanghyeok. All rights reserved.
                     <br />
                     Designed & Developed by Choi Kwanghyeok.
                 </p>
