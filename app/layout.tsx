@@ -6,7 +6,7 @@ import { pretendard } from "./fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Hyogi Portfolio",
+  title: "최광혁 개발자 포트폴리오",
   description: "A full-stack developer portfolio built with Next.js App Router.",
 };
 

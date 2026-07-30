@@ -2,7 +2,9 @@ import Image from "next/image";
 
 export default function IntroSection() {
     return (
-        <section className="mx-auto max-w-5xl border-b border-slate-300 dark:border-slate-700 px-4 py-16">
+        <section
+            id="Intro"
+            className="mx-auto max-w-5xl border-b border-slate-300 dark:border-slate-700 px-4 py-16">
             <div className="flex flex-col items-start gap-8 md:flex-row md:items-center">
                 <div className="relative h-58 w-40 overflow-hidden rounded-sm outline outline-1 outline-slate-300 dark:outline-slate-700">
                     <Image

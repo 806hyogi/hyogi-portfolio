@@ -113,12 +113,7 @@ const projects = [
             "GitLab",
             "Linux",
         ],
-        images: [
-            "/images/projects/sip-1.png",
-            "/images/projects/sip-2.png",
-            "/images/projects/sip-3.png",
-            "/images/projects/sip-4.png",
-        ],
+        images: [],
     },
 ];
 

@@ -8,6 +8,16 @@ import { useState } from "react";
 import { ThemeToggle } from "@/components/theme/theme-toggle";
 import { Button } from "@/components/ui/button";
 
+const navItems = [
+    { label: "소개", href: "#Intro" },
+    { label: "핵심 역량", href: "#Core" },
+    { label: "성향", href: "#Personal" },
+    { label: "기술 스택", href: "#Skill" },
+    { label: "프로젝트", href: "#Project" },
+    { label: "교육 및 수상", href: "#Education" },
+    { label: "연락처", href: "#Contact" },
+];
+
 export function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -17,7 +27,10 @@ export function Header() {
                 <Link
                     href="/"
                     className="flex min-w-0 items-baseline gap-2 text-md transition-colors"
-                    onClick={() => setIsMenuOpen(false)}
+                    onClick={() => {
+                        setIsMenuOpen(false);
+                        window.scrollTo({ top: 0, behavior: "smooth" });
+                    }}
                 >
                     <span className="shrink-0 font-bold text-[var(--logo-name-light)] dark:text-[var(--logo-name-dark)]">
                         최광혁
@@ -73,26 +86,41 @@ export function Header() {
 
             {isMenuOpen ? (
                 <div className="border-t border-border bg-background px-4 py-3 sm:hidden">
-                    <div className="mx-auto flex max-w-5xl items-center justify-end gap-2">
-                        <ThemeToggle />
+                    <div className="mx-auto flex max-w-5xl flex-col gap-3">
+                        <nav className="flex flex-col gap-1">
+                            {navItems.map((item) => (
+                                <Link
+                                    key={item.href}
+                                    href={item.href}
+                                    className="rounded-md px-2 py-2 text-sm font-normal text-zinc-900 transition-colors hover:bg-slate-100 dark:text-zinc-100 dark:hover:bg-slate-800"
+                                    onClick={() => setIsMenuOpen(false)}
+                                >
+                                    {item.label}
+                                </Link>
+                            ))}
+                        </nav>
 
-                        <Button asChild variant="ghost" size="icon">
-                            <Link
-                                href="https://github.com/806hyogi"
-                                target="_blank"
-                                rel="noreferrer"
-                                aria-label="GitHub"
-                                onClick={() => setIsMenuOpen(false)}
-                            >
-                                <Image
-                                    src="/icon/github.svg"
-                                    alt="github"
-                                    width={20}
-                                    height={20}
-                                    className="size-5 dark:invert"
-                                />
-                            </Link>
-                        </Button>
+                        <div className="flex items-center justify-end gap-2 border-t border-border pt-3">
+                            <ThemeToggle />
+
+                            <Button asChild variant="ghost" size="icon">
+                                <Link
+                                    href="https://github.com/806hyogi"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    aria-label="GitHub"
+                                    onClick={() => setIsMenuOpen(false)}
+                                >
+                                    <Image
+                                        src="/icon/github.svg"
+                                        alt="github"
+                                        width={20}
+                                        height={20}
+                                        className="size-5 dark:invert"
+                                    />
+                                </Link>
+                            </Button>
+                        </div>
                     </div>
                 </div>
             ) : null}
