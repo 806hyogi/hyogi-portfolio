@@ -23,7 +23,7 @@ export function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     return (
-        <header className="sticky top-0 z-50 bg-background/80 backdrop-blur">
+        <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur">
             <div className="mx-auto flex h-16 max-w-5xl items-center justify-between px-4 sm:px-6 lg:px-10">
                 <Link
                     href="/"
@@ -41,27 +41,9 @@ export function Header() {
                     </span>
                 </Link>
 
-                <div className="hidden items-center gap-2 sm:flex">
-                    <ResumeDownloadButton compact />
-
+                <div className="hidden items-center gap-2.5 sm:flex">
                     <ThemeToggle />
-
-                    <Button asChild variant="ghost" size="icon">
-                        <Link
-                            href="https://github.com/806hyogi"
-                            target="_blank"
-                            rel="noreferrer"
-                            aria-label="GitHub"
-                        >
-                            <Image
-                                src="/icon/github.svg"
-                                alt="github"
-                                width={20}
-                                height={20}
-                                className="size-5 dark:invert"
-                            />
-                        </Link>
-                    </Button>
+                    <ResumeDownloadButton compact />
                 </div>
 
                 <Button
@@ -104,27 +86,8 @@ export function Header() {
                         </nav>
 
                         <div className="flex items-center justify-end gap-2 border-t border-border pt-3">
-                            <ResumeDownloadButton compact />
-
                             <ThemeToggle />
-
-                            <Button asChild variant="ghost" size="icon">
-                                <Link
-                                    href="https://github.com/806hyogi"
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    aria-label="GitHub"
-                                    onClick={() => setIsMenuOpen(false)}
-                                >
-                                    <Image
-                                        src="/icon/github.svg"
-                                        alt="github"
-                                        width={20}
-                                        height={20}
-                                        className="size-5 dark:invert"
-                                    />
-                                </Link>
-                            </Button>
+                            <ResumeDownloadButton compact />
                         </div>
                     </div>
                 </div>

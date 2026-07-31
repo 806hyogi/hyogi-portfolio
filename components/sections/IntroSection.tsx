@@ -6,7 +6,7 @@ export default function IntroSection() {
             id="Intro"
             className="mx-auto max-w-5xl border-b border-slate-300 dark:border-slate-700 px-4 py-16">
             <div className="flex flex-col items-start gap-8 md:flex-row md:items-center">
-                <div className="relative h-58 w-40 overflow-hidden rounded-sm outline outline-1 outline-slate-300 dark:outline-slate-700">
+                <div className="relative h-70 w-47 overflow-hidden rounded-sm outline outline-1 outline-slate-300 dark:outline-slate-700">
                     <Image
                         src="/images/profile.jpg"
                         alt="최광혁 프로필 사진"
@@ -37,6 +37,24 @@ export default function IntroSection() {
                             <br />
                             개발에 앞서 시험 절차와 사용 흐름을 분석했고, 사용자가 어느 단계에서 불편을 겪는지 확인하며 화면을 설계했습니다. 같은 기능이라도 화면 구성과 동선에 따라 사용성과 업무 효율이 달라진다는 점을 경험하면서, 사용자 관점에서 문제를 해결하는 프론트엔드 개발에 더욱 확신을 갖게 되었습니다.
                         </p>
+
+                        <div className="mt-4 flex items-center gap-2">
+                            <a
+                                href="https://github.com/806hyogi"
+                                target="_blank"
+                                rel="noreferrer"
+                                className="inline-flex items-center gap-2 rounded-md border border-slate-300 px-3 py-2 text-xs font-medium text-zinc-900 transition-colors hover:bg-slate-50 dark:border-slate-700 dark:text-zinc-100 dark:hover:bg-slate-800"
+                            >
+                                <Image
+                                    src="/icon/github.svg"
+                                    alt=""
+                                    width={16}
+                                    height={16}
+                                    className="size-4 dark:invert"
+                                />
+                                GitHub
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>

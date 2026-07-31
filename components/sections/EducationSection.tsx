@@ -2,6 +2,15 @@ import { Award } from "lucide-react";
 
 import { SectionHeading } from "@/components/sections/SectionHeading";
 
+const academicItems = [
+    {
+        title: "선문대학교",
+        organization: "컴퓨터공학과",
+        description: "소프트웨어 개발, 자료구조, 데이터베이스, 웹 프로그래밍 중심 학습",
+        period: "2020.03 - 2024.02",
+    },
+];
+
 const educationItems = [
     {
         title: "TECH UP 부트캠프",
@@ -45,10 +54,36 @@ export default function EducationSection() {
             className="scroll-mt-16 border-b border-slate-300 px-4 py-10 dark:border-slate-700"
         >
             <SectionHeading>
-                교육 및 수상
+                학력 및 교육
             </SectionHeading>
 
             <div className="mt-6 flex flex-col gap-4">
+                {academicItems.map((item) => (
+                    <article
+                        key={item.title}
+                        className="p-4 0"
+                    >
+                        <div className="flex flex-col gap-2 sm:flex-row sm:justify-between sm:gap-4">
+                            <div className="min-w-0">
+                                <h4 className="flex flex-wrap items-center gap-2 text-base leading-6 text-zinc-900 dark:text-zinc-100">
+                                    <span className="font-semibold">{item.title}</span>
+                                    <span className="font-light"> | {item.organization}</span>
+                                </h4>
+
+                                <p className="mt-1 text-sm font-extralight leading-5 text-gray-700 dark:text-neutral-300">
+                                    {item.description}
+                                </p>
+                            </div>
+
+                            <p className="shrink-0 text-xs font-extralight leading-5 text-stone-500 dark:text-stone-400 sm:text-right">
+                                {item.period}
+                            </p>
+                        </div>
+                    </article>
+                ))}
+
+                <div className="my-1 h-px bg-slate-200 dark:bg-slate-800" />
+
                 {educationItems.map((item) => (
                     <article key={item.title} className="rounded-lg border border-slate-200 bg-white p-4 dark:border-slate-700 dark:bg-slate-900">
                         <div
@@ -66,7 +101,7 @@ export default function EducationSection() {
                                         </span>
                                     ) : null}
                                 </h3>
-                                <p className="text-sm font-extralight leading-5 text-gray-700 dark:text-neutral-300">
+                                <p className="mt-1 text-sm font-extralight leading-5 text-gray-700 dark:text-neutral-300">
                                     {item.description}
                                 </p>
                             </div>

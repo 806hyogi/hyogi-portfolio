@@ -43,7 +43,7 @@ export default function CoreSection() {
                 핵심 역량
             </SectionHeading>
 
-            <div className="mt-6 grid gap-4 md:grid-cols-3">
+            <div className="mt-6 grid gap-4 sm:grid-cols-3">
                 {coreItems.map((item) => (
                     <article
                         key={item.title}

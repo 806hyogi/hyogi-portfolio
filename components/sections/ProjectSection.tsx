@@ -161,7 +161,7 @@ export default function ProjectSection() {
                     <AccordionItem
                         key={project.title}
                         value={project.title}
-                        className="rounded-lg border border-slate-200 bg-white px-4 pb-4 dark:border-slate-700 dark:bg-slate-900"
+                        className="rounded-lg border border-slate-200 bg-white px-4 dark:border-slate-700 dark:bg-slate-900"
                     >
                         <AccordionTrigger className="min-h-12 items-center py-2.5 hover:no-underline cursor-pointer">
                             <div className="flex min-w-0 flex-1 flex-col items-start gap-1 pr-2 sm:flex-row sm:items-center sm:gap-4 sm:pr-3">
