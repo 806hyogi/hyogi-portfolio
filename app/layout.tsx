@@ -6,6 +6,7 @@ import { pretendard } from "./fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://hyogi.dev"),
   title: "최광혁 | 개발자 포트폴리오",
   description: "프론트엔드 개발자 최광혁의 포트폴리오입니다.",
   openGraph: {
