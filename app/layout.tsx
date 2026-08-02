@@ -12,14 +12,24 @@ export const metadata: Metadata = {
   openGraph: {
     title: "최광혁 | 개발자 포트폴리오",
     description: "프론트엔드 개발자 최광혁의 포트폴리오입니다.",
+    url: "https://hyogi.dev",
+    siteName: "최광혁 포트폴리오",
+    type: "website",
+    locale: "ko_KR",
     images: [
       {
-        url: "/images/og-image.png",
+        url: "/images/og-image-20260803.png",
         width: 1200,
         height: 630,
         alt: "최광혁 개발자 포트폴리오",
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "최광혁 | 개발자 포트폴리오",
+    description: "프론트엔드 개발자 최광혁의 포트폴리오입니다.",
+    images: ["/images/og-image-20260803.png"],
   },
 };
 
