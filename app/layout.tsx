@@ -3,6 +3,7 @@ import { Analytics } from "@vercel/analytics/next"
 import { Header } from "@/components/layout/Header";
 import { ThemeProvider } from "@/components/theme/theme-provider";
 import { Footer } from "@/components/layout/Footer";
+import { AdminAutoLogout } from "@/components/auth/admin-auto-logout"
 import { pretendard } from "./fonts";
 import "./globals.css";
 
@@ -42,6 +43,7 @@ export default function RootLayout({
   return (
     <html lang="ko" suppressHydrationWarning>
       <body className={pretendard.variable}>
+        <AdminAutoLogout />
         <ThemeProvider>
           <Header />
           <main className="mx-auto w-full max-w-[800px]">
