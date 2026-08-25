@@ -1,6 +1,7 @@
 "use client";
 
 import { Download, Mail } from "lucide-react";
+import { ScrollRevealSection } from "@/components/sections/ScrollRevealSection"
 
 const wait = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 const waitForImages = async () => {
@@ -50,8 +51,9 @@ export default function ContactSection() {
     };
 
     return (
-        <section
+        <ScrollRevealSection
             id="Contact"
+            delay={720}
             className="mb-16 scroll-mt-16 px-4 py-10"
         >
             <div className="flex flex-col items-center gap-4 text-center">
@@ -83,6 +85,6 @@ export default function ContactSection() {
                     이력서 다운로드
                 </button>
             </div>
-        </section>
+        </ScrollRevealSection>
     );
 }

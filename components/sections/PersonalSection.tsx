@@ -2,11 +2,13 @@ import Image from "next/image";
 
 import { SectionHeading } from "@/components/sections/SectionHeading";
 import { BulletList } from "@/components/sections/BulletList";
+import { ScrollRevealSection } from "@/components/sections/ScrollRevealSection"
 
 export default function PersonalSection() {
     return (
-        <section
+        <ScrollRevealSection
             id="Personal"
+            delay={240}
             className="scroll-mt-16 border-b border-slate-300 px-4 py-10 dark:border-slate-700"
         >
 
@@ -78,6 +80,6 @@ export default function PersonalSection() {
                     />
                 </div>
             </div>
-        </section>
+        </ScrollRevealSection>
     );
 }

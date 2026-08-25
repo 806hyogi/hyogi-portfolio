@@ -1,6 +1,7 @@
 import { Award } from "lucide-react";
 
 import { SectionHeading } from "@/components/sections/SectionHeading";
+import { ScrollRevealSection } from "@/components/sections/ScrollRevealSection"
 
 const academicItems = [
     {
@@ -49,8 +50,9 @@ const educationItems = [
 
 export default function EducationSection() {
     return (
-        <section
+        <ScrollRevealSection
             id="Education"
+            delay={600}
             className="scroll-mt-16 border-b border-slate-300 px-4 py-10 dark:border-slate-700"
         >
             <SectionHeading>
@@ -141,6 +143,6 @@ export default function EducationSection() {
                     </article>
                 ))}
             </div>
-        </section>
+        </ScrollRevealSection>
     );
 }

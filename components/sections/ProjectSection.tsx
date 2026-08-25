@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { BulletList } from "@/components/sections/BulletList";
 import { SectionHeading } from "@/components/sections/SectionHeading";
+import { ScrollRevealSection } from "@/components/sections/ScrollRevealSection"
 
 const projects = [
     {
@@ -144,8 +145,9 @@ export default function ProjectSection() {
     }, []);
 
     return (
-        <section
+        <ScrollRevealSection
             id="Project"
+            delay={480}
             className="scroll-mt-16 border-b border-slate-300 px-4 py-10 dark:border-slate-700"
         >
             <SectionHeading>
@@ -213,6 +215,6 @@ export default function ProjectSection() {
                     </AccordionItem>
                 ))}
             </Accordion>
-        </section>
+        </ScrollRevealSection>
     );
 }

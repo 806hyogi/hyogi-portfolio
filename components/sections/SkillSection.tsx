@@ -1,5 +1,6 @@
 import { SkillGroupCard } from "@/components/sections/SkillGroupCard";
 import { SectionHeading } from "@/components/sections/SectionHeading";
+import { ScrollRevealSection } from "@/components/sections/ScrollRevealSection"
 
 const skillGroups = [
     {
@@ -53,8 +54,9 @@ export default function SkillSection() {
     const [languageGroup, frontendGroup, backendGroup, databaseGroup, etcGroup] = skillGroups;
 
     return (
-        <section
+        <ScrollRevealSection
             id="Skill"
+            delay={360}
             className="scroll-mt-16 border-b border-slate-300 px-4 py-10 dark:border-slate-700"
         >
 
@@ -75,6 +77,6 @@ export default function SkillSection() {
                     <SkillGroupCard group={etcGroup} />
                 </div>
             </div>
-        </section>
+        </ScrollRevealSection>
     );
 }

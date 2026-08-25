@@ -2,6 +2,7 @@ import Image from "next/image";
 
 import { BulletList } from "@/components/sections/BulletList";
 import { SectionHeading } from "@/components/sections/SectionHeading";
+import { ScrollRevealSection } from "@/components/sections/ScrollRevealSection"
 
 const coreItems = [
     {
@@ -35,8 +36,9 @@ const coreItems = [
 
 export default function CoreSection() {
     return (
-        <section
+        <ScrollRevealSection
             id="Core"
+            delay={120}
             className="scroll-mt-16 border-b border-slate-300 px-4 py-10 dark:border-slate-700"
         >
             <SectionHeading>
@@ -71,6 +73,6 @@ export default function CoreSection() {
                     </article>
                 ))}
             </div>
-        </section>
+        </ScrollRevealSection>
     );
 }
