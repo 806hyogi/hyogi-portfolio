@@ -6,7 +6,7 @@ import { useSyncExternalStore } from "react";
 
 import { Button } from "@/components/ui/button";
 
-const subscribe = () => () => {};
+const subscribe = () => () => { };
 const getClientSnapshot = () => true;
 const getServerSnapshot = () => false;
 
@@ -43,9 +43,9 @@ export function ThemeToggle() {
             className="cursor-pointer"
         >
             {isDark ? (
-                <Sun className="size-5.5 text-[var(--icon-dark)]" strokeWidth={1} />
+                <Sun className="size-5.5 text-[var(--icon-dark)]" strokeWidth={1.5} />
             ) : (
-                <Moon className="size-5.5 text-[var(--icon-light)]" strokeWidth={1} />
+                <Moon className="size-5.5 text-[var(--icon-light)]" strokeWidth={1.5} />
             )}
         </Button>
     );

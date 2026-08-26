@@ -7,11 +7,12 @@ export default function IntroSection() {
             id="Intro"
             className="mx-auto max-w-5xl border-b border-slate-300 dark:border-slate-700 px-4 py-16">
             <div className="flex flex-col items-start gap-8 md:flex-row md:items-center">
-                <div className="relative h-70 w-47 overflow-hidden rounded-sm outline outline-1 outline-slate-300 dark:outline-slate-700">
+                <div className="relative h-74 w-49 overflow-hidden rounded-sm outline outline-1 outline-slate-300 dark:outline-slate-700">
                     <Image
                         src="/images/profile.jpg"
                         alt="최광혁 프로필 사진"
                         fill
+                        loading="eager"
                         className="object-cover"
                         sizes="160px"
                     />
@@ -28,11 +29,11 @@ export default function IntroSection() {
 
 
                     <div className="w-full max-w-[576px] pt-3">
-                        <p className="text-sm font-bold leading-6 text-gray-700 dark:text-gray-200">
+                        <p className="text-lg font-bold leading-10 text-gray-700 dark:text-gray-200">
                             ‘프론트엔드, 사용자 문제해결에 대한 열정을 이어온 개발자’
                         </p>
 
-                        <p className="text-xs font-normal leading-6 text-gray-700 dark:text-gray-300">
+                        <p className="text-sm font-normal leading-6 text-gray-700 dark:text-gray-300">
                             이루온 통신 솔루션 회사에서 SIP 시험 자동화 프로젝트의 프론트엔드 개발을 맡아 사용자가 복잡한 시험 절차를 쉽게 수행할 수 있도록 AT Manager 화면을 구현했습니다.
                             <br />
                             <br />

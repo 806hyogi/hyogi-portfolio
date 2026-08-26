@@ -20,7 +20,7 @@ export default function PersonalSection() {
                 <div className="flex flex-col gap-2.5">
                     <div className="flex w-full flex-col gap-1 sm:flex-row sm:items-start sm:justify-between sm:gap-4">
                         <div className="min-w-0">
-                            <span className="text-base font-semibold leading-6 text-zinc-900 dark:text-zinc-100">
+                            <span className="text-lg font-semibold leading-7 text-zinc-900 dark:text-zinc-100">
                                 이루온
                             </span>
                             <span className="text-base font-light leading-6 text-neutral-500 dark:text-neutral-400">

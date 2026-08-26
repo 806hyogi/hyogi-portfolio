@@ -67,7 +67,7 @@ export default function EducationSection() {
                     >
                         <div className="flex flex-col gap-2 sm:flex-row sm:justify-between sm:gap-4">
                             <div className="min-w-0">
-                                <h4 className="flex flex-wrap items-center gap-2 text-base leading-6 text-zinc-900 dark:text-zinc-100">
+                                <h4 className="flex flex-wrap items-center gap-2 text-lg leading-7 text-zinc-900 dark:text-zinc-100">
                                     <span className="font-semibold">{item.title}</span>
                                     <span className="font-light"> | {item.organization}</span>
                                 </h4>
@@ -92,7 +92,7 @@ export default function EducationSection() {
                             className="flex flex-col gap-2 sm:flex-row sm:justify-between sm:gap-4"
                         >
                             <div className="min-w-0">
-                                <h3 className="flex flex-wrap items-center gap-2 text-base leading-6 text-zinc-900 dark:text-zinc-100">
+                                <h3 className="flex flex-wrap items-center gap-2 text-lg leading-7 text-zinc-900 dark:text-zinc-100">
                                     <span className="font-semibold">
                                         {item.title}
                                     </span>

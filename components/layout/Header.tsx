@@ -10,13 +10,11 @@ import { Button } from "@/components/ui/button";
 import { ResumeDownloadButton } from "@/components/layout/ResumeDownloadButton";
 
 const navItems = [
-    { label: "소개", href: "#Intro" },
     { label: "핵심 역량", href: "#Core" },
     { label: "경력 사항", href: "#Personal" },
     { label: "기술 스택", href: "#Skill" },
     { label: "프로젝트", href: "#Project" },
-    { label: "교육 및 수상", href: "#Education" },
-    { label: "연락처", href: "#Contact" },
+    { label: "학력 및 교육", href: "#Education" },
 ];
 
 export function Header() {
@@ -41,7 +39,7 @@ export function Header() {
                     </span>
                 </Link>
 
-                <div className="hidden items-center gap-2.5 sm:flex">
+                <div className="hidden items-center gap-2.5 lg:flex">
                     <ThemeToggle />
                     <ResumeDownloadButton compact />
                 </div>
@@ -53,7 +51,7 @@ export function Header() {
                     aria-label={isMenuOpen ? "메뉴 닫기" : "메뉴 열기"}
                     aria-expanded={isMenuOpen}
                     onClick={() => setIsMenuOpen((current) => !current)}
-                    className="cursor-pointer sm:hidden"
+                    className="cursor-pointer lg:hidden"
                 >
                     {isMenuOpen ? (
                         <X
@@ -70,7 +68,7 @@ export function Header() {
             </div>
 
             {isMenuOpen ? (
-                <div className="border-t border-border bg-background px-4 py-3 sm:hidden">
+                <div className="border-t border-border bg-background px-4 py-3 lg:hidden">
                     <div className="mx-auto flex max-w-5xl flex-col gap-3">
                         <nav className="flex flex-col gap-1">
                             {navItems.map((item) => (

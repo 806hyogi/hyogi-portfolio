@@ -62,7 +62,7 @@ export default function CoreSection() {
                         </div>
 
                         <div className="p-4">
-                            <h3 className="text-base font-semibold leading-6 text-zinc-900 dark:text-zinc-100">
+                            <h3 className="text-lg font-semibold leading-7 text-zinc-900 dark:text-zinc-100">
                                 {item.title}
                             </h3>
 

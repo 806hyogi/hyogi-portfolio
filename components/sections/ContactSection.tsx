@@ -54,7 +54,7 @@ export default function ContactSection() {
         <ScrollRevealSection
             id="Contact"
             delay={720}
-            className="mb-16 scroll-mt-16 px-4 py-10"
+            className="scroll-mt-16 px-4 py-30"
         >
             <div className="flex flex-col items-center gap-4 text-center">
                 <p className="text-base font-normal leading-6 text-zinc-900 dark:text-zinc-100">
@@ -68,7 +68,7 @@ export default function ContactSection() {
                 </p>
             </div>
 
-            <div className="flex flex-col justify-center gap-4 pt-7 sm:flex-row">
+            <div className="flex flex-col justify-center gap-4 pt-10 sm:flex-row">
                 <a
                     href="mailto:rhkdgur120@naver.com"
                     className="inline-flex items-center justify-center gap-1 rounded-md bg-blue-500 px-6 py-4 text-base font-medium leading-6 text-white transition-colors hover:bg-blue-600 dark:bg-blue-700 dark:hover:bg-blue-600">

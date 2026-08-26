@@ -6,6 +6,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { BulletList } from "@/components/sections/BulletList";
 import { SectionHeading } from "@/components/sections/SectionHeading";
 import { ScrollRevealSection } from "@/components/sections/ScrollRevealSection"
+import { FullscreenImage } from "@/components/sections/FullscreenImage";
 
 const projects = [
     {
@@ -167,7 +168,7 @@ export default function ProjectSection() {
                     >
                         <AccordionTrigger className="min-h-12 items-center py-2.5 hover:no-underline cursor-pointer">
                             <div className="flex min-w-0 flex-1 flex-col items-start gap-1 pr-2 sm:flex-row sm:items-center sm:gap-4 sm:pr-3">
-                                <h3 className="min-w-0 max-w-full break-words sm:truncate text-left text-base font-medium leading-5 text-black dark:text-zinc-100 sm:flex-1">
+                                <h3 className="min-w-0 max-w-full break-words sm:truncate text-left text-lg font-semibold leading-7 text-black dark:text-zinc-100 sm:flex-1">
                                     {project.title}
                                 </h3>
 
@@ -199,14 +200,10 @@ export default function ProjectSection() {
 
                             <div className="flex w-full flex-col gap-2.5">
                                 {project.images.map((image, index) => (
-                                    <Image
+                                    <FullscreenImage
                                         key={image}
                                         src={image}
                                         alt={`${project.title} 화면 ${index + 1}`}
-                                        width={706}
-                                        height={351}
-                                        loading="eager"
-                                        className="h-auto w-full rounded-md object-contain"
                                     />
                                 ))}
                             </div>

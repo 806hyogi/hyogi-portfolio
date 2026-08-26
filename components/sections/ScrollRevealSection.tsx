@@ -48,6 +48,7 @@ export function ScrollRevealSection({
         <section
             ref={sectionRef}
             id={id}
+            data-scroll-reveal-section
             style={{ animationDelay: `${delay}ms` }}
             className={cn(
                 "opacity-0",
