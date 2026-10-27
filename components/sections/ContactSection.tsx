@@ -1,55 +1,8 @@
-"use client";
-
-import { Download, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
+import { ResumeDownloadButton } from "@/components/layout/ResumeDownloadButton";
 import { ScrollRevealSection } from "@/components/sections/ScrollRevealSection"
 
-const wait = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
-const waitForImages = async () => {
-    const images = Array.from(document.images);
-
-    await Promise.all(
-        images.map(async (image) => {
-            if (image.complete && image.naturalWidth > 0) {
-                return;
-            }
-
-            await new Promise<void>((resolve) => {
-                image.onload = () => resolve();
-                image.onerror = () => resolve();
-            });
-        })
-    );
-};
-
 export default function ContactSection() {
-
-    /* 이력서 다운로드 */
-    const handleDownloadPdf = async () => {
-        if (window.matchMedia("(max-width: 767px)").matches) {
-            window.alert("이력서 다운로드는 PC에서만 사용할 수 있습니다.");
-            return;
-        }
-
-        window.dispatchEvent(new Event("portfolio:open-all-projects"));
-
-        const closeProjects = () => {
-            window.dispatchEvent(new Event("portfolio:close-all-projects"));
-            window.removeEventListener("afterprint", closeProjects); // 인쇄가 끝났을때 닫기
-            window.removeEventListener("focus", closeProjects); // 인쇄창을 닫고 페이지로 돌아왔을때 닫기
-        };
-
-        window.addEventListener("afterprint", closeProjects);
-        window.addEventListener("focus", closeProjects);
-
-        await wait(500);
-        await waitForImages();
-        await wait(300);
-
-        window.print();
-
-        setTimeout(closeProjects, 300);
-    };
-
     return (
         <ScrollRevealSection
             id="Contact"
@@ -75,15 +28,7 @@ export default function ContactSection() {
                     <Mail aria-hidden="true" className="size-5" />
                     이메일 보내기
                 </a>
-                <button
-                    type="button"
-                    data-pdf-ignore="true"
-                    onClick={handleDownloadPdf}
-                    className="inline-flex cursor-pointer items-center justify-center gap-1 rounded-md border border-slate-300 px-6 py-4 text-base font-medium leading-6 text-zinc-900 transition-colors hover:bg-slate-50 dark:border-slate-700 dark:text-zinc-100 dark:hover:bg-slate-800"
-                >
-                    <Download aria-hidden="true" className="size-5" />
-                    이력서 다운로드
-                </button>
+                <ResumeDownloadButton />
             </div>
         </ScrollRevealSection>
     );

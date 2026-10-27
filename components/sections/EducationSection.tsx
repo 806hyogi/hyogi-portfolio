@@ -1,7 +1,7 @@
 import { Award } from "lucide-react";
 
+import { ScrollRevealSection } from "@/components/sections/ScrollRevealSection";
 import { SectionHeading } from "@/components/sections/SectionHeading";
-import { ScrollRevealSection } from "@/components/sections/ScrollRevealSection"
 
 const academicItems = [
     {
@@ -28,9 +28,9 @@ const educationItems = [
         ],
     },
     {
-        title: "대학생 SW 몰입형 부트캠프",
+        title: "BIT 웹 풀스택 몰입형 부트캠프",
         organization: "비트교육센터",
-        description: "대학생 개발자 대상 웹 풀스택 교육 과정",
+        description: "웹 프론트엔드 부터 백엔드와 데이터베이스 연동까지 웹 서비스의 전체 개발 교육 과정",
         period: "2023.06 - 2023.12",
         active: false,
         awards: [
@@ -48,6 +48,15 @@ const educationItems = [
     },
 ];
 
+const certificationItems = [
+    {
+        title: "정보처리기사",
+        organization: "한국산업인력공단",
+        date: "2025.02",
+        status: "실기 가채점 합격",
+    }
+];
+
 export default function EducationSection() {
     return (
         <ScrollRevealSection
@@ -56,10 +65,11 @@ export default function EducationSection() {
             className="scroll-mt-16 border-b border-slate-300 px-4 py-10 dark:border-slate-700"
         >
             <SectionHeading>
-                학력 및 교육
+                학력 및 자격
             </SectionHeading>
 
             <div className="mt-6 flex flex-col gap-4">
+                {/* 학력 */}
                 {academicItems.map((item) => (
                     <article
                         key={item.title}
@@ -86,6 +96,7 @@ export default function EducationSection() {
 
                 <div className="my-1 h-px bg-slate-200 dark:bg-slate-800" />
 
+                {/* 교육 및 수상 */}
                 {educationItems.map((item) => (
                     <article key={item.title} className="rounded-lg border border-slate-200 bg-white p-4 dark:border-slate-700 dark:bg-slate-900">
                         <div
@@ -142,6 +153,40 @@ export default function EducationSection() {
                         )}
                     </article>
                 ))}
+
+                {/* 자격증 */}
+                <div>
+                    <div className="mt-3 flex flex-col gap-2">
+                        {certificationItems.map((certification) => (
+                            <article
+                                key={`${certification.title}-${certification.date}`}
+                                className="flex flex-col gap-1 rounded-lg border border-slate-200 bg-white p-4 dark:border-slate-700 dark:bg-slate-900 sm:flex-row sm:items-center sm:justify-between sm:gap-4"
+                            >
+                                <div className="flex min-w-0 items-center gap-2">
+                                    <Award
+                                        aria-hidden="true"
+                                        className="size-5 shrink-0 text-blue-500"
+                                        strokeWidth={1.5}
+                                    />
+
+                                    <div className="flex flex-wrap items-center gap-2">
+                                        <h4 className="text-sm font-medium text-zinc-900 dark:text-zinc-100">
+                                            {certification.title}
+                                        </h4>
+
+                                        <span className="rounded-full bg-amber-50 px-2 py-0.5 text-xs font-medium text-amber-700 dark:bg-amber-950 dark:text-amber-300">
+                                            {certification.status}
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <p className="pl-7 text-xs font-extralight text-zinc-600 dark:text-zinc-300 sm:pl-0 sm:text-right">
+                                    {certification.organization} | {certification.date}
+                                </p>
+                            </article>
+                        ))}
+                    </div>
+                </div>
             </div>
         </ScrollRevealSection>
     );

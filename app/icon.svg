@@ -1,4 +1,13 @@
-<svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="50" height="50" rx="10" fill="#59AFFF"/>
-<path d="M9.27734 16.3242H12.4512V23.8315H20.6787V16.3242H23.8647V34H20.6787V26.4805H12.4512V34H9.27734V16.3242ZM29.5166 16.3242L33.8501 24.1367H34.0332L38.3667 16.3242H41.9678L35.5347 27.3838V34H32.3486V27.3838L25.9277 16.3242H29.5166Z" fill="white"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">Hyogi h. logo</title>
+  <rect width="64" height="64" rx="16" fill="#245CE0"/>
+  <path
+    d="M19.5 16.5v31M19.5 33c0-6 3.7-9.5 9.1-9.5 5.1 0 8.4 3.3 8.4 9v15"
+    fill="none"
+    stroke="#FFFFFF"
+    stroke-width="7"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <circle cx="48" cy="44" r="4" fill="#FFFFFF"/>
 </svg>

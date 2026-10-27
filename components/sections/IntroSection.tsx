@@ -1,5 +1,5 @@
-﻿import Image from "next/image";
-import { ScrollRevealSection } from "@/components/sections/ScrollRevealSection"
+﻿import { ScrollRevealSection } from "@/components/sections/ScrollRevealSection";
+import Image from "next/image";
 
 export default function IntroSection() {
     return (
@@ -34,10 +34,10 @@ export default function IntroSection() {
                         </p>
 
                         <p className="text-sm font-normal leading-6 text-gray-700 dark:text-gray-300">
-                            이루온 통신 솔루션 회사에서 SIP 시험 자동화 프로젝트의 프론트엔드 개발을 맡아 사용자가 복잡한 시험 절차를 쉽게 수행할 수 있도록 AT Manager 화면을 구현했습니다.
+                            이루온에서 SIP 시험 자동화 프로젝트의 화면 개발을 맡아 사용자가 복잡한 시험 절차를 쉽게 수행할 수 있도록 AT Manager 화면을 구현했습니다.
                             <br />
                             <br />
-                            개발에 앞서 시험 절차와 사용 흐름을 분석했고, 사용자가 어느 단계에서 불편을 겪는지 확인하며 화면을 설계했습니다. 같은 기능이라도 화면 구성과 동선에 따라 사용성과 업무 효율이 달라진다는 점을 경험하면서, 사용자 관점에서 문제를 해결하는 프론트엔드 개발에 더욱 확신을 갖게 되었습니다.
+                            개발에 앞서 시험 절차와 사용 과정을 분석했고, 사용자가 어느 단계에서 불편을 겪는지 확인하며 화면을 설계했습니다. 같은 기능이라도 화면 구성과 동선에 따라 사용성과 업무 효율이 달라진다는 점을 경험하면서, 사용자 관점에서 문제를 해결하는 웹 개발에 더욱 확신을 갖게 되었습니다.
                         </p>
 
                         <div className="mt-4 flex items-center gap-2">

@@ -1,8 +1,8 @@
 import Image from "next/image";
 
 import { BulletList } from "@/components/sections/BulletList";
+import { ScrollRevealSection } from "@/components/sections/ScrollRevealSection";
 import { SectionHeading } from "@/components/sections/SectionHeading";
-import { ScrollRevealSection } from "@/components/sections/ScrollRevealSection"
 
 const coreItems = [
     {

@@ -1,12 +1,11 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import Image from "next/image";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { BulletList } from "@/components/sections/BulletList";
-import { SectionHeading } from "@/components/sections/SectionHeading";
-import { ScrollRevealSection } from "@/components/sections/ScrollRevealSection"
 import { FullscreenImage } from "@/components/sections/FullscreenImage";
+import { ScrollRevealSection } from "@/components/sections/ScrollRevealSection";
+import { SectionHeading } from "@/components/sections/SectionHeading";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { useEffect, useState } from "react";
 
 const projects = [
     {
@@ -100,13 +99,15 @@ const projects = [
         title: "SIP 시험 자동화 | 수작업으로 진행하는 반복 시험 자동화",
         organization: "이루온",
         period: "24.10 - 25.01",
-        summary: "시험 자동화로 운영 효율을 5배 높인 서비스 구현 능력",
+        summary: "시험 생성부터 실행까지 여러 기능 화면을 통합한 자동화 UI 개발",
         points: [
-            "시험 운영 절차를 분석해 반복 입력과 불필요한 이동 구간 확인",
-            "시험 생성부터 실행까지 하나의 화면에서 처리할 수 있도록 UI 구현",
-            "Python 기반 백엔드와 REST API를 연동해 시험 정보 처리 및 API 명세를 기준으로 프론트엔드 기능 구현",
-            "GitLab 기반 형상관리와 Linux 환경 테스트를 반복하며 기능 안정성 점검",
-            "기존 5일 이상 걸리던 시험 기간을 1일 이내로 단축하여 시험 운영 절차 표준화에 기여",
+            "시험 절차와 사용자 흐름 분석",
+            "AT Manager UI 구현",
+            "Flask REST API 연동 및 요청·응답 검증",
+            "Linux 환경 테스트 및 운영 절차 표준화",
+            "시험 수행 기간 단축 5일 이상에서 1일 이내로 개선",
+            "장비 전문 인력 직접 수행 절차 무인 수행 체계로 전환",
+            "SIP 시나리오 및 시험 Case 관리 방식 표준화"
         ],
         stacks: [
             "JavaScript",

@@ -1,8 +1,8 @@
 import Image from "next/image";
 
-import { SectionHeading } from "@/components/sections/SectionHeading";
 import { BulletList } from "@/components/sections/BulletList";
-import { ScrollRevealSection } from "@/components/sections/ScrollRevealSection"
+import { ScrollRevealSection } from "@/components/sections/ScrollRevealSection";
+import { SectionHeading } from "@/components/sections/SectionHeading";
 
 export default function PersonalSection() {
     return (
@@ -73,8 +73,11 @@ export default function PersonalSection() {
 
                     <BulletList
                         items={[
-                            "SIP 기본 호 시험 자동화 APP 신규 론칭",
-                            "KT, U+ 고객사 IBCF 장비 MMLD 프로세스 이슈 및 운용 개선 C 담당자",
+                            "JavaScript·HTML·CSS 기반 SIP 시험 자동화 UI 개발",
+                            "Flask REST API 연동 및 요청·응답 데이터 검증",
+                            "시험 생성부터 실행까지의 절차를 화면 단위로 통합해 반복 작업 축소",
+                            "GitLab 형상 관리 및 Linux 환경 테스트",
+                            "C 기반 IBCF 장비 MMLD 프로세스 유지보수 및 KT·LG U+ 운용 개선 대응"
                         ]}
                         className="mt-1.5"
                     />

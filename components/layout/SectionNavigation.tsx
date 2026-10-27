@@ -12,7 +12,7 @@ const sections = [
     { id: "Personal", label: "경력 사항" },
     { id: "Skill", label: "기술 스택" },
     { id: "Project", label: "프로젝트" },
-    { id: "Education", label: "학력 및 교육" },
+    { id: "Education", label: "학력 및 자격" },
 ];
 
 export function SectionNavigation() {
