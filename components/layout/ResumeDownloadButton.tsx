@@ -16,7 +16,7 @@ export function ResumeDownloadButton({
     return (
         <a
             href="/resume/choi-kwanghyeok-resume.pdf"
-            download="최광혁_프론트엔드_개발자_이력서.pdf"
+            download="choi-kwanghyeok-resume.pdf"
             aria-label="이력서 다운로드"
             className={cn(
                 "inline-flex cursor-pointer items-center justify-center gap-1 rounded-md text-sm font-medium leading-5 transition-colors",
