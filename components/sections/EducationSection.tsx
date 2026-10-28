@@ -53,7 +53,7 @@ const certificationItems = [
         title: "정보처리기사",
         organization: "한국산업인력공단",
         date: "2025.02",
-        status: "실기 가채점 합격",
+        status: "필기 합격",
     }
 ];
 

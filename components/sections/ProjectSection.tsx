@@ -5,10 +5,13 @@ import { FullscreenImage } from "@/components/sections/FullscreenImage";
 import { ScrollRevealSection } from "@/components/sections/ScrollRevealSection";
 import { SectionHeading } from "@/components/sections/SectionHeading";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const projects = [
     {
+        slug: "playball",
         title: "Playball | 15,000명 대규모 야구 티켓팅",
         organization: "KT클라우드",
         period: "26.03 - 26.04",
@@ -51,6 +54,7 @@ const projects = [
         ],
     },
     {
+        slug: "myway",
         title: "Myway | 공공 데이터 API를 이용한 이벤트",
         organization: "KT클라우드",
         period: "25.12 - 26.01",
@@ -96,6 +100,7 @@ const projects = [
         ],
     },
     {
+        slug: "sip-automation",
         title: "SIP 시험 자동화 | 수작업으로 진행하는 반복 시험 자동화",
         organization: "이루온",
         period: "24.10 - 25.01",
@@ -197,6 +202,21 @@ export default function ProjectSection() {
                                 ))}
                             </div>
 
+                            <div className="mt-5 flex justify-end">
+                                <Link
+                                    href={`/project/${project.slug}`}
+                                    className="group inline-flex w-full items-center justify-center gap-1.5 text-sm font-medium text-blue-600 transition-colors hover:border-blue-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 dark:border-blue-900 dark:text-blue-400 dark:hover:border-blue-800 sm:w-auto"
+                                    aria-label={`${project.title} 자세히 보기`}
+                                >
+                                    자세히 보기
+
+                                    <ArrowRight
+                                        aria-hidden="true"
+                                        className="size-4 transition-transform group-hover:translate-x-0.5"
+                                    />
+                                </Link>
+                            </div>
+
                             <div className="my-4 h-0.5 w-full rounded-[5px] bg-neutral-200 dark:bg-slate-700" />
 
                             <div className="flex w-full flex-col gap-2.5">
@@ -208,7 +228,6 @@ export default function ProjectSection() {
                                     />
                                 ))}
                             </div>
-
                         </AccordionContent>
                     </AccordionItem>
                 ))}
