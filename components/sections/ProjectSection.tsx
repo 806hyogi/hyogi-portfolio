@@ -1,5 +1,6 @@
 "use client";
 
+import { projects } from "@/components/sections/project-data";
 import { BulletList } from "@/components/sections/BulletList";
 import { FullscreenImage } from "@/components/sections/FullscreenImage";
 import { ScrollRevealSection } from "@/components/sections/ScrollRevealSection";
@@ -8,124 +9,6 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-
-const projects = [
-    {
-        slug: "playball",
-        title: "Playball | 15,000명 대규모 야구 티켓팅",
-        organization: "KT클라우드",
-        period: "26.03 - 26.04",
-        summary: "재사용 가능한 컴포넌트 설계로 개발 효율을 개선",
-        points: [
-            "티켓 예매, 좌석 선택, AI 경기 추천, VQA 기능 화면 개발",
-            "사용자 이용 흐름을 분석해 예매 과정을 단계별로 설계",
-            "기능별 컴포넌트를 공통 구조로 분리",
-            "디렉터리 구조와 컴포넌트 관리 기준을 표준화해 팀원들이 동일한 방식으로 개발할 수 있는 환경 구축",
-            "리엑트 기반의 재사용 가능한 컴포넌트를 구현하고 기획·디자이너와 화면 구성을 지속적으로 검토하며 사용성 개선",
-            "프로젝트 대상 수상",
-        ],
-        stacks: [
-            "Next.js",
-            "React.js",
-            "TypeScript",
-            "Tailwind CSS",
-            "Shadcn",
-            "Radix UI",
-            "Zustand",
-            "Github",
-            "Jira",
-            "Figma",
-        ],
-        images: [
-            "/images/projects/playball-1.png",
-            "/images/projects/playball-2.png",
-            "/images/projects/playball-3.png",
-            "/images/projects/playball-4.png",
-            "/images/projects/playball-5.png",
-            "/images/projects/playball-6.png",
-            "/images/projects/playball-7.png",
-            "/images/projects/playball-8.png",
-            "/images/projects/playball-9.png",
-            "/images/projects/playball-10.png",
-            "/images/projects/playball-11.png",
-            "/images/projects/playball-12.png",
-            "/images/projects/playball-13.png",
-            "/images/projects/playball-14.png",
-        ],
-    },
-    {
-        slug: "myway",
-        title: "Myway | 공공 데이터 API를 이용한 이벤트",
-        organization: "KT클라우드",
-        period: "25.12 - 26.01",
-        summary: "이벤트 참여 과정을 개선해 사용자 이탈을 줄인 서비스 경험",
-        points: [
-            "사용자 참여 과정의 불편을 개선",
-            "프로젝트 테스트 과정에서 이벤트 생성부터 참여까지 사용자 입장에서 이동 동선을 분석",
-            "이벤트 상세 정보와 신청 기능을 하나의 화면으로 통합하고, 진행 상태를 단계별로 확인하는 UI 개발",
-            "리엑트 컴포넌트 구조를 재설계해 중복 코드를 줄임",
-            "Context API를 활용해 화면 간 데이터를 일관되게 관리",
-            "REST API 연동 과정에서 비동기 처리와 예외 상황을 고려해 로딩 화면과 오류 메시지를 구현하고, 신청 완료 여부가 즉시 반영되도록 개선",
-            "Node.js express 소켓 실시간 채팅 서버 개발 (socket.io)",
-            "DynamoDB를 활용하여 빠른 데이터 저장과 7일간 메시지 JSON 압축 후 AWS S3 저장 기능 구현",
-            "Perspective API를 활용한 채팅 비속어 검증 로직 구현",
-        ],
-        stacks: [
-            "Next.js",
-            "React.js",
-            "Auth.js",
-            "TypeScript",
-            "Tailwind CSS",
-            "Shadcn",
-            "Radix UI",
-            "Zustand",
-            "Github",
-            "Socket.io",
-            "Supabase",
-            "PostgreSQL",
-            "DynamoDB",
-            "Amazon S3",
-            "AWS EC2",
-            "Node.js Express",
-            "Fly.io",
-            "Figma",
-        ],
-        images: [
-            "/images/projects/myway-1.png",
-            "/images/projects/myway-2.png",
-            "/images/projects/myway-3.png",
-            "/images/projects/myway-4.png",
-            "/images/projects/myway-5.png",
-            "/images/projects/myway-6.png",
-        ],
-    },
-    {
-        slug: "sip-automation",
-        title: "SIP 시험 자동화 | 수작업으로 진행하는 반복 시험 자동화",
-        organization: "이루온",
-        period: "24.10 - 25.01",
-        summary: "시험 생성부터 실행까지 여러 기능 화면을 통합한 자동화 UI 개발",
-        points: [
-            "시험 절차와 사용자 흐름 분석",
-            "AT Manager UI 구현",
-            "Flask REST API 연동 및 요청·응답 검증",
-            "Linux 환경 테스트 및 운영 절차 표준화",
-            "시험 수행 기간 단축 5일 이상에서 1일 이내로 개선",
-            "장비 전문 인력 직접 수행 절차 무인 수행 체계로 전환",
-            "SIP 시나리오 및 시험 Case 관리 방식 표준화"
-        ],
-        stacks: [
-            "JavaScript",
-            "HTML/CSS",
-            "Python",
-            "Flask",
-            "Robot Framework",
-            "GitLab",
-            "Linux",
-        ],
-        images: [],
-    },
-];
 
 const projectValues = projects.map((project) => project.title);
 
