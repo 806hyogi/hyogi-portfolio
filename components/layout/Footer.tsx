@@ -34,6 +34,8 @@ export function Footer() {
                     </Link>
 
                     <Link
+                        data-analytics-event="contact_email_click"
+                        data-analytics-placement="footer"
                         href="mailto:rhkdgur120@naver.com"
                         aria-label="Email"
                         className="inline-flex size-6 items-center justify-center text-zinc-600 dark:text-zinc-300"

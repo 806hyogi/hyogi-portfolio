@@ -9,11 +9,29 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { trackEvent } from "@/components/analytics/track";
 
 const projectValues = projects.map((project) => project.title);
 
 export default function ProjectSection() {
     const [openProjects, setOpenProjects] = useState<string[]>([]); // 프로젝트 아코디언 상태
+
+    const handleProjectChange = (nextValues: string[]) => {
+        for (const project of projects) {
+            const wasOpen = openProjects.includes(project.title);
+            const isOpen = nextValues.includes(project.title);
+
+            // 닫혀 있던 프로젝트를 열었을때만 이벤트를 기록
+            if (!wasOpen && isOpen) {
+                trackEvent("project_expand", {
+                    projectSlug: project.slug,
+                    placement: "project_list",
+                });
+            }
+        }
+
+        setOpenProjects(nextValues);
+    };
 
     /* 프로젝트 열리는 이벤트 */
     useEffect(() => {
@@ -44,13 +62,15 @@ export default function ProjectSection() {
                 주요 프로젝트
             </SectionHeading>
 
-            <Accordion type="multiple"
+            <Accordion
+                type="multiple"
                 value={openProjects}
-                onValueChange={setOpenProjects}
+                onValueChange={handleProjectChange}
                 className="mt-6 flex flex-col gap-4"
             >
                 {projects.map((project) => (
                     <AccordionItem
+                        data-project-slug={project.slug}
                         key={project.title}
                         value={project.title}
                         className="rounded-lg border border-slate-200 bg-white px-4 dark:border-slate-700 dark:bg-slate-900"

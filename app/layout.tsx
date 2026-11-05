@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next"
+import { Suspense } from "react";
 import { Header } from "@/components/layout/Header";
 import { ThemeProvider } from "@/components/theme/theme-provider";
 import { Footer } from "@/components/layout/Footer";
 import { AdminAutoLogout } from "@/components/auth/admin-auto-logout"
 import { pretendard } from "./fonts";
+import { PageViewTracker } from "@/components/analytics/PageViewTracker";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -52,6 +54,9 @@ export default function RootLayout({
           <Footer />
         </ThemeProvider>
         <Analytics />
+        <Suspense fallback={null}>
+          <PageViewTracker /> {/* 페이지 뷰 추적기 */}
+        </Suspense>
       </body>
     </html>
   );

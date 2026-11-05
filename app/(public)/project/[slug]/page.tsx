@@ -59,7 +59,7 @@ export default async function ProjectPage({
     const isPlayball = slug === "playball";
 
     return (
-        <article id="project-top" className="mx-auto min-h-screen w-full px-4 pb-12 pt-8 sm:px-6">
+        <article id="project-top" data-project-slug={project.slug} className="mx-auto min-h-screen w-full px-4 pb-12 pt-8 sm:px-6">
             <Link href="/#Project" className="inline-flex min-h-9 items-center gap-2 rounded-sm text-xs text-neutral-600 hover:text-blue-600 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-500 dark:text-neutral-300 dark:hover:text-blue-400">
                 <ArrowLeft aria-hidden="true" className="size-4" />
                 프로젝트 목록
@@ -84,7 +84,12 @@ export default async function ProjectPage({
                         disabled={!project.siteUrl}
                         className="h-9 rounded-md bg-blue-600 px-3 text-xs text-white disabled:opacity-60 dark:bg-blue-400 dark:text-slate-950">
                         {project.siteUrl ? (
-                            <a href={project.siteUrl} target="_blank" rel="noopener noreferrer">
+                            <a
+                                data-analytics-event="project_site_click"
+                                data-analytics-placement="header"
+                                href={project.siteUrl}
+                                target="_blank"
+                                rel="noopener noreferrer">
                                 <ExternalLink aria-hidden="true" /> 배포 사이트
                             </a>
                         ) : (
@@ -99,7 +104,12 @@ export default async function ProjectPage({
                         variant="outline"
                         className="h-9 rounded-md px-3 text-xs">
                         {project.githubUrl ? (
-                            <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                            <a
+                                data-analytics-event="project_github_click"
+                                data-analytics-placement="header"
+                                href={project.githubUrl}
+                                target="_blank"
+                                rel="noopener noreferrer">
                                 <Code2 aria-hidden="true" /> GitHub
                             </a>
                         ) : (
@@ -239,8 +249,8 @@ export default async function ProjectPage({
 
             <DetailSection id="links" number="06" title="GitHub · 배포 링크">
                 <div className="grid gap-3 sm:grid-cols-2" aria-describedby="resource-note">
-                    {[{ label: "GitHub 저장소", description: "소스 코드와 구현 내용 살펴보기", Icon: Code2, url: project.githubUrl }, { label: "배포 사이트", description: "서비스 직접 사용해 보기", Icon: Globe, url: project.siteUrl }]
-                        .map(({ label, description, Icon, url }) => {
+                    {[{ label: "GitHub 저장소", description: "소스 코드와 구현 내용 살펴보기", Icon: Code2, url: project.githubUrl, eventName: "project_github_click", }, { label: "배포 사이트", description: "서비스 직접 사용해 보기", Icon: Globe, url: project.siteUrl, eventName: "project_site_click" }]
+                        .map(({ label, description, Icon, url, eventName }) => {
                             const content = (
                                 <>
                                     <Icon aria-hidden="true" className="size-5 shrink-0" />
@@ -265,7 +275,7 @@ export default async function ProjectPage({
                                     className="h-auto min-w-0 justify-start gap-3 whitespace-normal rounded-lg border-slate-200 bg-white p-4 text-left disabled:opacity-60 dark:border-slate-700 dark:bg-slate-900"
                                 >
                                     {url ? (
-                                        <a href={url} target="_blank" rel="noopener noreferrer">
+                                        <a href={url} target="_blank" rel="noopener noreferrer" data-analytics-event={eventName} data-analytics-placement="related_links">
                                             {content}
                                         </a>
                                     ) : content}

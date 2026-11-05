@@ -23,6 +23,8 @@ export default function ContactSection() {
 
             <div className="flex flex-col justify-center gap-4 pt-10 sm:flex-row">
                 <a
+                    data-analytics-event="contact_email_click"
+                    data-analytics-placement="contact"
                     href="mailto:rhkdgur120@naver.com"
                     className="inline-flex items-center justify-center gap-1 rounded-md bg-blue-500 px-6 py-4 text-base font-medium leading-6 text-white transition-colors hover:bg-blue-600 dark:bg-blue-700 dark:hover:bg-blue-600">
                     <Mail aria-hidden="true" className="size-5" />

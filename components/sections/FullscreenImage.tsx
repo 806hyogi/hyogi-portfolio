@@ -23,6 +23,8 @@ export function FullscreenImage({
         <Dialog>
             <DialogTrigger asChild>
                 <button
+                    data-analytics-event="project_image_expand"
+                    data-analytics-placement="project_image"
                     type="button"
                     className="relative block aspect-[706/351] w-full cursor-zoom-in overflow-hidden rounded-md bg-black"
                 >

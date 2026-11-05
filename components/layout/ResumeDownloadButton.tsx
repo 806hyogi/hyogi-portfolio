@@ -15,6 +15,8 @@ export function ResumeDownloadButton({
 }: ResumeDownloadButtonProps) {
     return (
         <a
+            data-analytics-event="resume_download"
+            data-analytics-placement={compact ? "header" : "contact"}
             href="/resume/choi-kwanghyeok-resume.pdf"
             download="choi-kwanghyeok-resume.pdf"
             aria-label="이력서 다운로드"
